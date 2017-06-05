@@ -1,0 +1,21 @@
+Pulling mysql (mysql:latest)...
+Trying to pull repository docker.io/library/mysql ... 
+latest: Pulling from docker.io/library/mysql
+Digest: sha256:2f4b1900c0ee53f344564db8d85733bd8d70b0a78cd00e6d92dc107224fc84a5
+Building web
+Step 1 : FROM python:2.7
+Trying to pull repository docker.io/library/python ... 
+2.7: Pulling from docker.io/library/python
+Digest: sha256:2b1e4bad5c8805ca22f964cf14d3f5a16568787a5a1d6f84ec1c4b7d7ebc87ed
+ ---> 2e9467da064d
+Step 2 : ADD . /code
+ ---> 00a30c673bb7
+Removing intermediate container cd810b7d7cd2
+Step 3 : WORKDIR /code
+ ---> Running in 5d5feeb8e8d1
+ ---> 7f29cdbf9173
+Removing intermediate container 5d5feeb8e8d1
+Step 4 : RUN pip install -r requirements.txt
+ ---> Running in e6b0607ad4c2
+[91mCould not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+[0mService 'web' failed to build: The command '/bin/sh -c pip install -r requirements.txt' returned a non-zero code: 1
