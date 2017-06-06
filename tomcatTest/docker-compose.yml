@@ -1,0 +1,19 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+     - "8080:8080"
+    volumes:
+     - /usr/local/dockerTest/tomcatTest:/usr/local/tomcat/webapps
+    links:
+     - redis
+     - mongo
+    environment:
+     MYSQL_ROOT_PASSWORD: 123456
+
+  redis:
+    image: redis
+
+  mongo:
+    image: mongo
